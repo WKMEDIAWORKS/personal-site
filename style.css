@@ -1,0 +1,112 @@
+
+* {
+    background-color: rgb(21,21,21);
+    color: rgb(240,240,240);
+    font-family: 'Ubuntu Mono', monospace;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#root-container, #about-container, #project-container, #photo-container, #aboutme-container, #aboutsite-container{
+    display: flex;
+    gap: 12px;
+    width: fit-content;
+    margin-bottom: 2%;
+    align-items: center;
+}
+.rootdir-icon, .aboutdir-icon, .projectdir-icon, .photodir-icon {
+    width: 40px;
+    height: 30px;
+}
+
+.root-dir{
+    font-size: 19px;
+}
+#header {
+    display:flex;
+    font-size: 30px;
+    justify-content: center;
+    border-bottom: 2px solid rgb(40,40,40);
+    padding: 20px;
+}
+#global-container {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+#sub-container {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+#aboutme-container, #aboutsite-container, #first-project-container, #second-project-container, #third-project-container {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+}
+.aboutsite-icon, .aboutme-icon, .file-icon {
+    width: 40px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+#global-about-container, #global-project-container {
+    display: flex;
+    flex-direction: column;
+}
+#about-files, #project-files, #photo-file {
+    margin-left: 2%;
+}
+.img {
+    height: 70%;
+    width: 70%;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: palevioletred;
+}
+#start {
+    margin-bottom: 7%;
+}
+
+li {
+    margin-bottom: 2%;
+}
+#end {
+    margin-top: 10%;
+}
+ul {
+    margin-top: 5%;
+}
+
+#first-project-container, #second-project-container, #third-project-container{
+    gap: 10%;
+    margin-bottom: 3%;
+    align-items: center;
+}
+
+#third-project-container {
+    gap: 6%;
+    width: 190px;
+}
+#bootloader-img {
+    width: 90%;
+}
+#first-sub-cont-boot, #second-sub-cont-boot, #third-sub-cont-boot, #forth-sub-cont-boot, #fifth-sub-cont-boot, #first-sub-cont-weather, #second-sub-cont-weather, #third-sub-cont-weather, #forth-sub-cont-weather, #first-sub-cont-etch, #second-sub-cont-etch, #first-sub-cont-img, #second-sub-cont-img, #third-sub-cont-img, #forth-sub-cont-img, #fifth-sub-cont-img, #sixth-sub-cont-img, #seventh-sub-cont-img, #eighth-sub-cont-img, #ninth-sub-cont-img, #tenth-sub-cont-img{
+    padding: 3%;
+    border-bottom: 1px solid rgb(40,40,40);
+}
+#first-photo-container {
+    display: flex;
+    gap: 6%;
+    align-items: center;
+    width: fit-content;
+}

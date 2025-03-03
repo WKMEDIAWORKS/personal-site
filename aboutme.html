@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">waris maqbool</div>
+    <div id="global-container"></div>
+    
+    <script>
+        const globalContainer = document.getElementById("global-container");
+         function aboutme() {
+
+globalContainer.innerHTML = "";
+const greeting = document.createElement("h2");
+greeting.textContent = "Hello";
+greeting.classList.add("greeting");
+
+const paragraph = document.createElement("p");
+paragraph.textContent = "I'm Waris, and this is my website. I am currently studying computer science.";
+paragraph.classList.add("paragraph");
+
+const github = document.createElement("a");
+github.href = "https://github.com/WKMEDIAWORKS/";
+github.textContent = "write software";
+github.target = "_blank";
+github.classList.add("github");
+
+const ig = document.createElement("a");
+ig.href = "https://www.instagram.com/waris_clicks?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+ig.textContent = "click photos";
+ig.target = "_blank";
+ig.classList.add("ig");
+
+const moreAboutMe = document.createElement("p");
+moreAboutMe.textContent = "I like to ";
+moreAboutMe.classList.add("moreaboutme");
+
+moreAboutMe.appendChild(github);
+moreAboutMe.appendChild(document.createTextNode(" and "));
+moreAboutMe.appendChild(ig);
+moreAboutMe.appendChild(document.createTextNode("."));
+
+
+const img = document.createElement("img");
+img.src = "./assets/myimg.JPG";
+img.classList.add("img");
+
+const email = document.createElement("a");
+email.href = "mailto:warisk709@gmail.com";
+email.textContent = "here";
+email.classList.add("email");
+
+const contact = document.createElement("p");
+contact.textContent = `You can email me `;
+contact.classList.add("contact");
+contact.appendChild(email);
+contact.appendChild(document.createTextNode("."));
+
+globalContainer.appendChild(greeting);
+globalContainer.appendChild(paragraph);
+globalContainer.appendChild(moreAboutMe);
+globalContainer.appendChild(img);
+globalContainer.appendChild(contact);
+
+
+}
+
+aboutme();
+
+    </script>
+</body>
+</html>
