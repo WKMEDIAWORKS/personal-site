@@ -31,7 +31,7 @@ export function rootDirectory() {
     });
 }
 
-function subDirectories() {
+export function subDirectories() {
     const subContainer = document.createElement("div");
     subContainer.setAttribute("id", "sub-container");
 
@@ -145,7 +145,7 @@ function subDirectories() {
     });
 }
 
-function aboutFiles(globalAboutContainer) {
+export function aboutFiles(globalAboutContainer) {
     const filesContainer = document.createElement("div");
     filesContainer.setAttribute("id", "about-files");
 
@@ -191,7 +191,7 @@ function aboutFiles(globalAboutContainer) {
 
 }
 
-function projectFiles(globalProjectContainer) {
+export function projectFiles(globalProjectContainer) {
     const filesContainer = document.createElement("div");
     filesContainer.setAttribute("id", "project-files");
 
@@ -256,7 +256,7 @@ function projectFiles(globalProjectContainer) {
     });  
 }
 
-function photoFile(globalPhotoContainer) {
+export function photoFile(globalPhotoContainer) {
     const filesContainer = document.createElement("div");
     filesContainer.setAttribute("id", "photo-file");
 

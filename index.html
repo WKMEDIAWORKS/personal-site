@@ -1,14 +1,24 @@
-<!DOCTYPE html>
+index.html: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>root</title>
+    <title>waris maqbool - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header">waris maqbool</div>
+    <div id="header">
+        <div style="margin-left: 20px;">waris maqbool</div>
+        <img id="toggle-terminal" class="terminal-icon" src="./assets/terminal.png">
+    </div>
+    
+
     <div id="global-container"></div>
+
+    <div id="terminal-container" class="hidden">
+        <div id="terminal-output"></div>
+    </div>
+
     <script type="module" src="main.js"></script>
 </body>
 </html>
