@@ -23,7 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         terminalContainer.classList.toggle('hidden');
         resetPrompt();
         terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        
+        if (!terminalContainer.classList.contains('hidden')) {
+            // If the terminal is visible, show the cursor
+            const cursor = document.querySelector('.cursor');
+            if (cursor) cursor.style.display = 'inline-block';
+        }
     });
+    
 
     document.addEventListener('keydown', (e) => {
         if (!terminalContainer.classList.contains('hidden')) {
@@ -61,20 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateTerminalDisplay() {
         const prompt = `user@website:~$ ${inputBuffer}`;
-        terminalOutput.innerHTML = `
-            <div class="history">${history.join('<br>')}</div>
-            <div class="current-line">${prompt}<span class="cursor">_</span></div>
-        `;
+        const currentLine = document.createElement('div');
+        currentLine.classList.add('current-line');
+        currentLine.innerHTML = `${prompt}<span class="cursor">_</span>`;
+    
+        const historyContent = history.map(entry => {
+            const historyItem = document.createElement('div');
+            historyItem.classList.add('history');
+            historyItem.innerHTML = entry;
+            return historyItem;
+        });
+    
+        terminalOutput.innerHTML = '';
+    
+        historyContent.forEach(item => terminalOutput.appendChild(item));
+
+        terminalOutput.appendChild(currentLine);
         terminalOutput.scrollTop = terminalOutput.scrollHeight;
     }
 
     function resetPrompt() {
-        if (inputBuffer) {
-            history.push(`user@website:~$ ${inputBuffer}`);
-        }
         inputBuffer = '';
         historyIndex = -1;
+        updateTerminalDisplay();
     }
+    
 
     function executeCommand(command) {
         if (!command) return;
@@ -82,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const args = command.split(' ');
         const cmd = args[0].toLowerCase();
         const arg = args.slice(1).join(' ');
-
+        
         let output = '';
-        switch(cmd) {
+        switch (cmd) {
             case 'ls':
                 output = handleLS();
                 break;
@@ -95,15 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 output = handleCAT(arg);
                 break;
             case 'clear':
-                terminalOutput.innerHTML = '';
+                history = [];  
+                terminalOutput.innerHTML = '';  
+                resetPrompt();  
                 return;
             default:
                 output = `Command not found: ${cmd}`;
         }
         
-        history.push(output);
+        history.push(`user@website:~$ ${command}\n${output}`);
+        updateTerminalDisplay();
     }
-
+    
+    
+      
     function handleLS() {
         let contents = [];
         switch(currentDirectory) {

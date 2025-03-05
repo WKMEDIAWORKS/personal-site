@@ -191,7 +191,7 @@ ul {
     color: lime;
 } 
 
-@media (max-width: 786px) {
+@media (max-width: 900px) {
     .terminal-icon {
         display: none;
     }
