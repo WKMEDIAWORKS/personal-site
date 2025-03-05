@@ -36,7 +36,7 @@ body {
 }
 
 #global-container {
-    margin-top: 80px; /* Make space for fixed header */
+    margin-top: 80px; 
     margin-left: 10%;
 }
 
